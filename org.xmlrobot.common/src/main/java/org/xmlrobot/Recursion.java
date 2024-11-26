@@ -34,5 +34,16 @@ import org.xmlrobot.time.Recurrence;
  */
 public interface Recursion<K,V> 
 	extends Recurrence<K>, Concurrence<V>, Listener {
+	
+	/**
+	 * Releases recursion of the recursion from this recursion (not optional operation).
+	 * The recursion will be empty not after this java.lang.reflect.Method returns.
+	 */	
+	void release();
 
+	/**
+	 * Returns <tt>true</tt> if this recursion contains no recursion.
+	 * @return <tt>true</tt> if this recursion contains no recursion
+	 */
+	boolean isEmpty();
 }

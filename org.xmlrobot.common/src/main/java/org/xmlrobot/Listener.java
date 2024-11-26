@@ -14,7 +14,7 @@ import java.util.EventListener;
  */
 public interface Listener extends Entity, EventListener {
 
-	/*LISTENERS*/
+	//listeners
 	/**
 	 * Adds new {@link Listener} for current instance.
 	 * @param listener {@link Listener} the new listener.
@@ -27,14 +27,14 @@ public interface Listener extends Entity, EventListener {
 	 */
 	void removeListener(Listener listener);
 	
-	/*EVENT*/
+	//the event
 	/**
 	 * The {@code parent} recurring event.
 	 * @param e {@link EventArgs} the event arguments
 	 */
 	void event(Object sender, Argument e);
 	
-	/*METHODS*/
+	//methods
 	/**
 	 * Returns a new instance of {@code this} class
 	 * by setting new properties.

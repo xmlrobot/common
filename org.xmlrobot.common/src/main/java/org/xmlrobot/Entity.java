@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadFactory;
 public interface Entity 
 	extends Cloneable, Serializable, Runnable, ThreadFactory, Executor {
 
-	/*EVENT TYPES*/
+	/*event type constants*/
 	/**
 	 * Orders parent event to execute instruction.
 	 * @see javax.xml.stream.events.ProcessingInstruction
@@ -31,7 +31,7 @@ public interface Entity
 	 */
 	public static final int TRANSFER = 2;
 	
-	/*PROPERTIES*/
+	//properties
 	/**
 	 * Returns the name of this listener.
 	 * @return the name of this listener.
@@ -62,7 +62,7 @@ public interface Entity
 	 */
 	void setParity(Parity parity);
 	
-	/*METHODS*/
+	//methods
 	/**
 	 * Returns a new instance of {@code this} class
 	 * by setting new properties.
