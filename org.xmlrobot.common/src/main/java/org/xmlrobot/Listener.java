@@ -12,8 +12,7 @@ import java.util.EventListener;
  * 
  * @author Joan Balaguer Ardanuy, xmlrobot.org, Order.
  */
-public interface Listener
-	extends Entity, EventListener {
+public interface Listener extends Entity, EventListener {
 
 	/*LISTENERS*/
 	/**

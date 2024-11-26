@@ -69,5 +69,5 @@ public interface Entity
 	 * @return a new instance of {@code this} class
 	 * by setting new properties
 	 */
-	Object clone();
+	Listener clone();
 }
