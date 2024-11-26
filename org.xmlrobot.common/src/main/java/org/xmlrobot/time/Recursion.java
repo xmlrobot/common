@@ -1,7 +1,10 @@
 package org.xmlrobot.time;
 
-import org.xmlrobot.TimeListener;
+import org.xmlrobot.Listener;
 
-public interface Recursion<K,V> extends Recurrence<K>, Concurrence<V>, TimeListener<K,V> {
+/**
+ * 
+ */
+public interface Recursion<K,V> extends Recurrence<K>, Concurrence<V>, Listener {
 
 }

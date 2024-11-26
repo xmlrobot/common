@@ -3,7 +3,7 @@ package org.xmlrobot;
 import java.util.Random;
 
 /**
- * <h1>{@code org.xmlrobot.Parity} Enumeration</h1>
+ * <h1>org.xmlrobot.Parity Enumeration</h1>
  * <br>
  * Parity, in a programmatic context, are opposing yet complementary states
  * that are fundamental to understanding and interpreting various systems and

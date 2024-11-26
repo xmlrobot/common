@@ -9,8 +9,8 @@ import java.util.concurrent.ThreadFactory;
  * 
  * @author Joan Balaguer Ardanuy, xmlrobot.org, Order.
  */
-public interface Entity extends Cloneable,
-	Serializable, Runnable, ThreadFactory, Executor {
+public interface Entity 
+	extends Cloneable, Serializable, Runnable, ThreadFactory, Executor {
 
 	/*EVENT TYPES*/
 	/**
