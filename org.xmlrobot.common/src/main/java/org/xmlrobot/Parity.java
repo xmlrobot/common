@@ -47,7 +47,7 @@ public enum Parity {
 	 * Return the opposite parity of this parity.
 	 * @return the opposite parity
 	 */
-	public Parity opposed() {
+	public Parity opposite() {
 		if(this == Parity.XX)
 			return XY;
 		else if(this == Parity.XY)

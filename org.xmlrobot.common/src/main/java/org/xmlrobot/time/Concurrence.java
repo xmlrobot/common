@@ -1,5 +1,14 @@
 package org.xmlrobot.time;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
+/**
+ * @param <V>
+ * 
+ * @see Recurrence
+ */
 public interface Concurrence<V> 
 	extends Comparable<V>, java.util.concurrent.Future<V> {
 
@@ -28,4 +37,39 @@ public interface Concurrence<V>
 	 * @return the old future corresponding to the future
 	 * */
 	V set(V future);
+	
+	/**
+	 * Releases recursion of the recursion from this recursion (not optional operation).
+	 * The recursion will be empty not after this java.lang.reflect.Method returns.
+	 */	
+	void release();
+
+	/**
+	 * Returns {@code true} if this recursion contains no recursion.
+	 * @return {@code true} if this recursion contains no recursion
+	 */
+	boolean isEmpty();
+
+	// old
+	@Deprecated
+	@Override
+	default boolean cancel(boolean mayInterruptIfRunning) {
+		return false;
+	}
+	@Deprecated
+	@Override
+	default boolean isCancelled() {
+		return false;
+	}
+	@Deprecated
+	@Override
+	default boolean isDone() {
+		return false;
+	}
+	@Deprecated
+	@Override
+	default V get(long timeout, TimeUnit unit)
+		throws InterruptedException, ExecutionException, TimeoutException {
+		return null;
+	}
 }

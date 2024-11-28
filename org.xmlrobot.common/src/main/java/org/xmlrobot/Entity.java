@@ -11,44 +11,12 @@ import java.util.concurrent.ThreadFactory;
  */
 public interface Entity 
 	extends Cloneable, Serializable, Runnable, ThreadFactory, Executor {
-
-	/*event type constants*/
-	/**
-	 * Orders parent event to execute instruction.
-	 * @see javax.xml.stream.events.ProcessingInstruction
-	 */
-	public static final int GENESIS = 0;
-
-	/**
-	 * Indicates an event is a start element.
-	 * @see javax.xml.stream.events.StartElement
-	 */
-	public static final int LISTEN = 1;
-
-	/**
-	 * Indicates an event is an end element.
-	 * @see javax.xml.stream.events.EndElement
-	 */
-	public static final int TRANSFER = 2;
 	
-	//properties
 	/**
-	 * Returns the name of this listener.
-	 * @return the name of this listener.
+	 * Returns the name of this entity.
+	 * @return the name of this entity.
 	 */
 	String getName();
-	
-	/**
-	 * Returns the event type.
-	 * @return the event type.
-	 */
-	int getEventType();
-	
-	/**
-	 * Sets the event type.
-	 * @param command {@link String} the event type
-	 */
-	void setEventType(int command);
 	
 	/**
 	 * Returns the {@link Parity}.
@@ -64,10 +32,10 @@ public interface Entity
 	
 	//methods
 	/**
-	 * Returns a new instance of {@code this} class
-	 * by setting new properties.
-	 * @return a new instance of {@code this} class
-	 * by setting new properties
+	 * Returns a new instance of {@code this} class by setting
+	 * new properties.
+	 * @return a new instance of {@code this} class by setting
+	 * new properties
 	 */
-	Listener clone();
+	Entity clone();
 }
