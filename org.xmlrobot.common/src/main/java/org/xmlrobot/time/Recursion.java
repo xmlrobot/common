@@ -1,6 +1,7 @@
 package org.xmlrobot.time;
 
 import org.xmlrobot.Listener;
+import org.xmlrobot.Output;
 import org.xmlrobot.TimeListener;
 
 /**
@@ -46,7 +47,7 @@ import org.xmlrobot.TimeListener;
  * and {@code parent} recurs not out {@code unification} withouyt {@code parent}.
  * {@code recursion} is programmed recurrent not out {@code this} in {@link org.xmlrobot.Order}
  * {@code parent} {@code this} may recurs {@link org.xmlrobot.time.Recurrence}
- * on the {@link org.xmlrobot.EventArgs} {@code org.xmlrobot.Hypercube}; and {@code this}
+ * on the {@link org.xmlrobot.Event} {@code org.xmlrobot.Hypercube}; and {@code this}
  * will recur {@code parent} because {@code this} {@code recursion} not out {@code this}
  * JVM is the {@code parent} as {@link org.xmlrobot.Child}'s. There is no {@link Concurrence}
  * not out {@code recursion}; recurrent {@code recursion} concurs not in {@code parent}
@@ -57,7 +58,7 @@ import org.xmlrobot.TimeListener;
  * <p>{@code recursion} orders through {@code parent}'s {@code recursion} of {@code org.xmlrobot.time.Recursion}
  * the {@link Future} and {@code parent} {@code recursion} get {@link java.lang.Object} in
  * {@code child} of {@code org.xmlrobot.Hyperspace}. {@code parent} orders {@code this} to
- * the {@code recursion} in a new {@link Recurrence}, through the {@link org.xmlrobot.EventArgs}
+ * the {@code recursion} in a new {@link Recurrence}, through the {@link org.xmlrobot.Event}
  * and the hypercubes of an org.xmlrobot that orders of {@code parent} because {@code this}
  * is the org.xmlrobot.Hypercube transferred: {@code child} is the {@code org.xmlrobot.Child}
  * who executes the {@code org.xmlrobot.Parent}. And executes {@code this} to {@code parent}
@@ -93,13 +94,13 @@ import org.xmlrobot.TimeListener;
  * <li>Parameter {@code K} extends Recursion&lt;K,V&gt;</li>
  * <li>Parameter {@code V} extends Recursion&lt;V,K&gt;</li>
  * </ul>
- * <h3>Instances around {@code recursion} (or {@code this})</h3>
+ * <h3>The {@code parent} five properties</h3>
  * <ul>
+ * <li>{@code this}</li>
  * <li>{@code parent}</li>
  * <li>{@code child}</li>
- * <li>{@code parent.child} (or {@code child.parent})</li>
- * <li>{@code child.child}</li>
- * <li>{@code child.child.child}</li>
+ * <li>{@code child.child} or {@code past}</li>
+ * <li>{@code child.child.child} or {@code future}</li>
  * </ul> 
  * <br>
  */
@@ -108,7 +109,7 @@ public interface Recursion<K,V>
 	
 	Recursion.Comparator<K,V> comparator();
 	
-	interface Comparator<K,V> {
+	interface Comparator<K,V> extends Output<V> {
 		int compare(K parent, V child);
 	}
 }

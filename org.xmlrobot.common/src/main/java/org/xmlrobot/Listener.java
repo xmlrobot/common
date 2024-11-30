@@ -6,7 +6,6 @@ import java.util.EventListener;
  * <img src="./doc-files/image.jpg" width="100">
  * <h1>org.xmlrobot.Listener Interface</h1>
  * <h2><i>Polymorphic implementation of a {@code listener}</i></h2>
- * 
  * <h3>Abstract</h3>
  * A {@code listener} in object
  * oriented programming is an {@link org.xmlrobot.Entity} to order events by
@@ -79,7 +78,7 @@ public interface Listener extends Entity, EventListener {
 	//event
 	/**
 	 * The {@code parent} recurring event.
-	 * @param e {@link EventArgs} the event arguments
+	 * @param e {@link Event} the event received
 	 */
-	void event(Object sender, EventArgs e);
+	void onEventReceived(Object sender, Event e);
 }
