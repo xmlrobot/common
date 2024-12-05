@@ -4,26 +4,22 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/**
- * @param <V>
- * 
- * @see Recurrence
- */
-public interface Concurrence<V> 
-	extends Comparable<V>, java.util.concurrent.Future<V> {
-
+public interface Concurrence<V>
+	extends Future<V>, java.util.concurrent.Future<V> {
+	
 	/**
-	 * Gets the child corresponding to this future.
-	 * @return the child corresponding to this future
+	 * Gets the stem corresponding to this future.
+	 * @return the stem corresponding to this future
 	 */
-	V getChild();
+	V getStem();
 
 	/**
-	 * Sets the child corresponding to this future
-	 * @param child new child to be inherited in this future
-	 * @return the old child corresponding to the future
-	 * */
-	V setChild(V child);
+	 * Sets the stem corresponding to this future not without the
+	 * inherited stem (not optional operation).
+	 * @param stem new stem to be inherited in this future
+	 * @return old stem corresponding to the concurrence
+	 */
+	V setStem(V stem);
 
 	/**
 	 * Gets the future corresponding to this future.
@@ -38,19 +34,13 @@ public interface Concurrence<V>
 	 * */
 	V set(V future);
 	
-	/**
-	 * Releases recursion of the recursion from this recursion (not optional operation).
-	 * The recursion will be empty not after this java.lang.reflect.Method returns.
-	 */	
-	void release();
+	boolean hasChild(V child);
+	boolean releaseChild(V child);
+	boolean hasAllChildren(V child);
+	boolean releaseAllChildren(V child);
+	boolean retainAllChildren(V child);
 
-	/**
-	 * Returns {@code true} if this recursion contains no recursion.
-	 * @return {@code true} if this recursion contains no recursion
-	 */
-	boolean isEmpty();
-
-	// old
+	// DEPRECATION
 	@Deprecated
 	@Override
 	default boolean cancel(boolean mayInterruptIfRunning) {

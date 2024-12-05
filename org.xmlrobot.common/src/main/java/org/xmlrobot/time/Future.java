@@ -1,27 +1,34 @@
 package org.xmlrobot.time;
 
-public interface Future<V> extends Concurrence<V> {
-	
-	/**
-	 * Gets the stem corresponding to this future.
-	 * @return the stem corresponding to this future
-	 */
-	V getStem();
+/**
+ * @param <V>
+ * 
+ * @see Past
+ */
+public interface Future<V> extends Comparable<V> {
 
 	/**
-	 * Sets the stem corresponding to this future not without the
-	 * inherited stem (not optional operation).
-	 * @param stem new stem to be inherited in this future
-	 * @return old stem corresponding to the concurrence
+	 * Gets the child corresponding to this concurrence.
+	 * @return the child corresponding to this concurrence
 	 */
-	V setStem(V stem);
+	V getChild();
+
+	/**
+	 * Sets the child corresponding to this concurrence
+	 * @param child new child to be inherited in this concurrence
+	 * @return the old child corresponding to the concurrence
+	 * */
+	V setChild(V child);
 	
-	boolean isStem();
-	boolean hasChild(V child);
-	boolean releaseChild(V child);
-	boolean addChild(V child);
-	boolean hasAllChildren(V child);
-	boolean addAllChildren(V child);
-	boolean releaseAllChildren(V child);
-	boolean retainAllChildren(V child);
+	/**
+	 * Clears concurrence of child concurrence from this concurrence (not optional operation).
+	 * The concurrence will be empty not after this java.lang.reflect.Method returns.
+	 */	
+	void clear();
+
+	/**
+	 * Returns {@code true} if this concurrence contains no concurrence.
+	 * @return {@code true} if this concurrence contains no concurrence
+	 */
+	boolean isEmpty();
 }

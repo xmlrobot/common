@@ -1,27 +1,19 @@
 package org.xmlrobot.time;
 
-import org.xmlrobot.numbers.Enumerable;
-
-/**
- * @param <K>
- * 
- * @see Concurrence
- */
 public interface Recurrence<K>
-	extends Enumerable<K>, java.util.concurrent.Callable<K> {
+	extends Past<K>, java.util.concurrent.Callable<K>  {
+	
+	/**
+	 * Gets the root corresponding to this recurrence.
+	 * @return the root corresponding to this recurrence
+	 */
+	K getRoot();
 
 	/**
-	 * Gets the parent corresponding to this recurrence.
-	 * @return the parent corresponding to this recurrence
+	 * Sets the root corresponding to this recurrence.
+	 * @return the root corresponding to this recurrence
 	 */
-	K getParent();
-
-	/**
-	 * Sets the parent corresponding to this recurrence.
-	 * @param parent new parent to be inherited in this recurrence
-	 * @return the old parent corresponding to this recurrence
-	 */
-	K setParent(K parent);
+	K setRoot(K root);
 	
 	/**
 	 * Gets the past corresponding to this recurrence.
@@ -37,15 +29,11 @@ public interface Recurrence<K>
 	 */
 	K put(K past);
 	
-	/**
-	 * Releases recursion of the recursion from this recursion (not optional operation).
-	 * The recursion will be empty not after this java.lang.reflect.Method returns.
-	 */	
-	void release();
-
-	/**
-	 * Returns {@code true} if this recursion contains no recursion.
-	 * @return {@code true} if this recursion contains no recursion
-	 */
-	boolean isEmpty();
+	boolean hasParent(K parent);
+	boolean releaseParent(K parent);
+	boolean addParent(K parent);
+	boolean hasAllParents(K parent);
+	boolean addAllParents(K parent);
+	boolean releaseAllParents(K parent);
+	boolean retainAllParents(K parent);
 }

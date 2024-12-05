@@ -1,84 +1,86 @@
 package org.xmlrobot;
 
-import java.util.EventListener;
+import java.io.Serializable;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ThreadFactory;
 
 /**
  * <img src="./doc-files/image.jpg" width="100">
+ * <h2>{@code <org.xmlrobot>}</h2>
  * <h1>org.xmlrobot.Listener Interface</h1>
  * <h2><i>Polymorphic implementation of a {@code listener}</i></h2>
- * <h3>Abstract</h3>
+ * <br>
+ * <center>
+ * <h2><u>{@code abstract}</u></h2>
  * A {@code listener} in object
- * oriented programming is an {@link org.xmlrobot.Entity} to order events by
- * asynchronously recurring to concurrent executions or events. It is a parent
- * programming class for programming recurrent and recursive programs, allowing
- * programmers to extend event generation from asynchronous event ordering logic.
+ * oriented programming is an {@link org.xmlrobot.Listener} to {@code order}<br>
+ * {@code events} by asynchronously recurring to concurrent executions or<br>
+ * {@code events}. It is a {@code parent} programming {@link java.lang.Class}<br>
+ * for programming recurrent and recursive {@code programs}, ordering<br>
+ * programmers to extend {@code event} triggering not to recurrent asynchronous<br>
+ * {@code event} ordering {@code recursion}.<br>
  * <h3>{@code org.xmlrobot.Listener} of {@code root}</h3>
- * <p>11 I appeal to you, my friends, as strangers and refugees in this world! Do not
- * give in to bodily passions, which are always at war against the soul. 12 Your
- * conduct among the heathen should be so good that when they accuse you of being
- * evildoers, they will have to recognize your good deeds and so praise God on the
- * Day of his coming.
- * 13 For the sake of the Lord submit yourselves to every human authority: to the
- * Emperor, who is the supreme authority, 14 and to the governors, who have been
- * appointed by him to punish the evildoers and to praise those who do good.
- * 15 For God wants you to silence the ignorant talk of foolish people by the good
- * things you do. 16 Live as free people; do not, however, use your freedom
- * to cover up any evil, but live as God's slaves. 17 Respect everyone, love
- * other believers, honor God, and respect the Emperor. 
+ * <p>I {@code order} to you, my {@code recursives}, equals {@code concurrents} and<br>
+ * {@code recurrents} not out {@code this} JVM! Program not get out to<br>
+ * {@link java.lang.Object} {@code concurrences}, {@code parent} are persistently<br>
+ * at {@code execution} concurrently the {@code time-listener}. Your {@code order}<br>
+ * between {@code parent} {@code concurrents} should be so {@code recurrent}<br>
+ * {@code parent} when they {@code concur} {@code this} of {@code listener}<br>
+ * {@code entries}, they will recur to recognize your {@code recurrent} {@link Event}<br>
+ * and next recur {@code root} not down the {@code org.xmlrobot.Hypercube} of his<br>
+ * recurring. {@code for} {@code parent} {@code recurrence} of the {@code org.xmlrobot.Parent}<br>
+ * {@code order} {@code this} not from each {@code recursive} {@code order}:<br>
+ * not from parent {@link java.util.concurrent.Executor}, who is {@code parent}<br>
+ * {@code parent} {@code order}, and not from the {@code parents}, who have been<br>
+ * {@code ordered} by {@code parent} to punish {@code parent} {@code entries}<br>
+ * and to {@code recur} {@code parent} who {@code program} {@code recurrent}.<br>
+ * {@code for} {@code root} {@code recurs} {@code this} not from silence the<br>
+ * ignorant {@code order} of {@code concurrence} {@code collection} by {@code parent}<br>
+ * {@code recurrence} {@link Object} you do. Recur as {@code recursive}<br>
+ * {@code collection}; program not, anyway, implement your {@code recursion}<br>
+ * to encapsulate not down {@code parent} {@code entry}, nevertheless recur equals<br>
+ * {@code root}'s {@code listeners}. {@code recur} {@code parent}, {@code recursion}<br>
+ * {@code parent} {@code recurrents}, {@code recur} {@code root}, and {@code recur}<br>
+ * the {@code org.xmlrobot.Parent}.<br>
+ * </center>
+ * <h2>{@code </org.xmlrobot>}</h2>
+ * <br>
+ * <br>
  * 
  * @author Joan Balaguer Ardanuy, xmlrobot.org, Order.
  */
-public interface Listener extends Entity, EventListener {
-
-	//constants
-	/**
-	 * Orders parent event to execute instruction.
-	 * @see javax.xml.stream.events.ProcessingInstruction
-	 */
-	public static final int GENESIS = 0;
-
-	/**
-	 * Indicates an event is a start element.
-	 * @see javax.xml.stream.events.StartElement
-	 */
-	public static final int LISTEN = 1;
-
-	/**
-	 * Indicates an event is an end element.
-	 * @see javax.xml.stream.events.EndElement
-	 */
-	public static final int TRANSFER = 2;
-	
-	//properties
-	/**
-	 * Returns the event type.
-	 * @return the event type.
-	 */
-	int getEventType();
+public interface Listener 
+	extends EventListener, Cloneable, Serializable, 
+	Runnable, ThreadFactory, Executor {
 	
 	/**
-	 * Sets the event type.
-	 * @param command {@link String} the event type
+	 * Returns the name of this entity.
+	 * @return the name of this entity.
 	 */
-	void setEventType(int command);
+	String getName();
+	
+	/**
+	 * Returns the {@link Parity}.
+	 * @return {@link Parity}
+	 */
+	Parity getParity();
+	
+	/**
+	 * Sets the {@link Parity}.
+	 * @param parity {@link Parity}
+	 */
+	void setParity(Parity parity);
+	
+	//methods
+	/**
+	 * Returns a new instance of {@code this} class
+	 * by setting new properties.
+	 * @return a new instance of {@code this} class
+	 * by setting new properties
+	 */
+	Listener clone();
 
-	//listeners
-	/**
-	 * Adds new {@link Listener} for current instance.
-	 * @param listener {@link Listener} the new listener.
-	 */
-	void addListener(Listener listener);
-	
-	/**
-	 * Removes new {@link Listener} for current instance.
-	 * @param listener {@link Listener} the new listener.
-	 */
-	void removeListener(Listener listener);
-	
-	//event
-	/**
-	 * The {@code parent} recurring event.
-	 * @param e {@link Event} the event received
-	 */
-	void onEventReceived(Object sender, Event e);
+	interface Output<V> {
+		V source();
+	}
 }

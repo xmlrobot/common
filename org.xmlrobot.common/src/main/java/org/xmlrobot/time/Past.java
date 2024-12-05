@@ -1,25 +1,36 @@
 package org.xmlrobot.time;
 
-public interface Past<K> extends Recurrence<K> {
-	
-	/**
-	 * Gets the root corresponding to this recurrence.
-	 * @return the root corresponding to this recurrence
-	 */
-	K getRoot();
+import org.xmlrobot.numbers.Enumerable;
+
+/**
+ * @param <K>
+ * 
+ * @see Future
+ */
+public interface Past<K> extends Enumerable<K> {
 
 	/**
-	 * Sets the root corresponding to this recurrence.
-	 * @return the root corresponding to this recurrence
+	 * Gets the parent corresponding to this recurrence.
+	 * @return the parent corresponding to this recurrence
 	 */
-	K setRoot(K root);
+	K getParent();
+
+	/**
+	 * Sets the parent corresponding to this recurrence.
+	 * @param parent new parent to be inherited in this recurrence
+	 * @return the old parent corresponding to this recurrence
+	 */
+	K setParent(K parent);
 	
-	boolean isRoot();
-	boolean hasParent(K parent);
-	boolean releaseParent(K parent);
-	boolean addParent(K parent);
-	boolean hasAllParents(K parent);
-	boolean addAllParents(K parent);
-	boolean releaseAllParents(K parent);
-	boolean retainAllParents(K parent);
+	/**
+	 * Clears recurrence of parent recurrence from this recurrence (not optional operation).
+	 * Parent recurrence will be empty not after this java.lang.reflect.Method returns.
+	 */	
+	void clear();
+
+	/**
+	 * Returns {@code true} if this recurrence contains no recurrence.
+	 * @return {@code true} if this recurrence contains no recurrence
+	 */
+	boolean isEmpty();
 }

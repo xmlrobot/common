@@ -2,10 +2,10 @@ package org.xmlrobot.numbers;
 
 import java.io.Serializable;
 
-import org.xmlrobot.time.Recurrence;
+import org.xmlrobot.time.Past;
 
 public interface Collection<E>
-	extends Recurrence<Collection<E>>, java.util.Collection<E>, Serializable {
+	extends Past<Collection<E>>, java.util.Collection<E>, Serializable {
 
 	// properties
 	/**

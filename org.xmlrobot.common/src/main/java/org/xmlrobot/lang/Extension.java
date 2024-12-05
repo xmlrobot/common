@@ -1,4 +1,4 @@
-package org.xmlrobot;
+package org.xmlrobot.lang;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
